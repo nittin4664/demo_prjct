@@ -1,0 +1,27 @@
+<h1>Listing carpools</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>To</th>
+    <th>From</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @carpools.each do |carpool| %>
+  <tr>
+    <td><%= carpool.user_id %></td>
+    <td><%= carpool.to %></td>
+    <td><%= carpool.from %></td>
+    <td><%= link_to 'Show', carpool %></td>
+    <td><%= link_to 'Edit', edit_carpool_path(carpool) %></td>
+    <td><%= link_to 'Destroy', carpool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Carpool', new_carpool_path %>
